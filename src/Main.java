@@ -11,10 +11,17 @@ class Main {
         String input_First = scanner.nextLine();
         String[] input_Line = input_First.split(" ");
         if (input_First.length() < 2) {
-            System.out.println("throws Exception //т.к. строка не является математической операцией");
-            return;
+            try {
+                throw new IOException();
+            } catch (IOException e){
+                System.out.println("throws Exception //т.к. строка не является математической операцией");
+            }
         } else if (input_Line.length != 3) {
-            System.out.println("throws Exception //т.к. отсутствуют пробелы или формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)");
+            try {
+                throw new IOException();
+            } catch (IOException e){
+                System.out.println("throws Exception //т.к. отсутствуют пробелы или формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)");
+            }
         } else {
             calc(input_Line); // вызываем метод из тз
         }
@@ -34,7 +41,11 @@ class Main {
                         break;
                     } else {
                         if (j == 9) {
-                            System.out.println("throws Exception //т.к. используются одновременно разные системы счисления");
+                            try {
+                                throw new IOException();
+                            } catch (IOException e){
+                                System.out.println("throws Exception //т.к. используются одновременно разные системы счисления");
+                            }
                         }
                     }
                 }
@@ -47,7 +58,11 @@ class Main {
                             break;
                         } else {
                             if (d == 9) {
-                                System.out.println("throws Exception //т.к. используются одновременно разные системы счисления");
+                                try {
+                                    throw new IOException();
+                                } catch (IOException e){
+                                    System.out.println("throws Exception //т.к. используются одновременно разные системы счисления");
+                                }
                             }
                         }
 
